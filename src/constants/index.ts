@@ -1,0 +1,4 @@
+import { BREAKPOINTS } from "./BREAKPOINTS"
+import { BROWSER_ROUTE } from "./BROWSER_ROUTE"
+
+export { BREAKPOINTS, BROWSER_ROUTE }
