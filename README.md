@@ -1,3 +1,5 @@
+
+
 # Scaffold a full production ready project with Kuma 🐻
 
 ## Use the code below to initialize
@@ -7,7 +9,7 @@ npx create-kuma-project <projectName>
 
 ## Take a look at the modules we have:
 
-### React + Redux + Typescript
+### Basic React
 - ReactJs
 - Redux Saga
 - React Hook Form
@@ -20,4 +22,4 @@ npx create-kuma-project <projectName>
 - Prettier
 - Postcss
 
-### Last changed 20/05/2024
+### Last update on 05/20/2024
