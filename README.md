@@ -9,11 +9,9 @@ Kuma helps you get your project up and running without having the need to spend 
 Take a look at our templates that we call modules, and start your project right away.
 
 <p align="center">
-    <img alt="NPM downloads" src="https://img.shields.io/npm/d18m/create-kuma-project
-    ">
-    <img src="https://img.shields.io/npm/unpacked-size/create-kuma-project
-    " alt="Bundle Size">
-	<img alt="Last Commit" src="https://img.shields.io/github/last-commit/SitaGomes/create-kuma-project"/>
+    <img alt="NPM downloads" src="https://img.shields.io/npm/d18m/create-kuma-project">
+    <img src="https://img.shields.io/npm/unpacked-size/create-kuma-project" alt="Bundle Size">
+<img alt="Last Commit" src="https://img.shields.io/github/last-commit/SitaGomes/create-kuma-project"/>
 </p>
 
 <p align="center">
