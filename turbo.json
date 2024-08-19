@@ -16,6 +16,9 @@
     },
     "storybook": {
       "dependsOn": ["^storybook"]
+    },
+    "storybook:build": {
+      "dependsOn": ["^storybook:build"]
     }
   }
 }
