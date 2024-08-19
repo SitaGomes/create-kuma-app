@@ -29,6 +29,7 @@ module.exports = {
   overrides: [
     {
       files: ["*.js?(x)", "*.ts?(x)"],
+      excludedFiles: ["tailwind.config.js"] 
     },
   ],
 };

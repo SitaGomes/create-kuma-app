@@ -1,0 +1,10 @@
+{
+  "name": "@kuma/tailwind-config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "tailwind.config.js",
+  "files": [
+    "tailwind.config.js"
+  ]
+}
