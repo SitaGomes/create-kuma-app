@@ -1,1 +1,2 @@
-export * from "./stories/basic"
+import './styles/global.css';
+export * from './basic';

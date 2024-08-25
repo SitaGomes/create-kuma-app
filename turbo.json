@@ -18,6 +18,10 @@
       "dependsOn": ["^dev:backend"],
       "persistent": true
     },
+    "dev:frontend": {
+      "dependsOn": ["^dev:frontend"],
+      "persistent": true
+    },
     "storybook": {
       "dependsOn": ["^storybook"]
     },

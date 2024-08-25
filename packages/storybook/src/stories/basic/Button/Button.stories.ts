@@ -45,6 +45,6 @@ export const Small: Story = {
 export const Desactivated: Story = {
   args: {
     primary: false,
-    children: "Button"
-  }
+    children: 'Button',
+  },
 };
