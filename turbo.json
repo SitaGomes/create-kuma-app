@@ -1,9 +1,11 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
+
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
+      "env": ["API_ROUTE", "SECRET_KEY", "NODE_ENV"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
@@ -21,12 +23,6 @@
     "dev:frontend": {
       "dependsOn": ["^dev:frontend"],
       "persistent": true
-    },
-    "storybook": {
-      "dependsOn": ["^storybook"]
-    },
-    "storybook:build": {
-      "dependsOn": ["^storybook:build"]
     }
   }
 }

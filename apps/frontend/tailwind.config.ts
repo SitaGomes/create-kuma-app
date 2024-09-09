@@ -1,10 +1,1 @@
-import type { Config } from 'tailwindcss';
-
-const config: Config = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-export default config;
+export * from '@kuma/ui/tailwind.config';

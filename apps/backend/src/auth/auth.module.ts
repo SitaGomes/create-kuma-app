@@ -4,6 +4,8 @@ import { AuthService } from './auth.service';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { AuthController } from './auth.controller';
+// Supprimez cette ligne, CorsModule n'est pas nécessaire ici
+// import { CorsModule } from '@nestjs/common';
 
 @Module({
   imports: [
