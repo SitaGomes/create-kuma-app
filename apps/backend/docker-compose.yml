@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: ADMIN           # Change to desired username
+      POSTGRES_PASSWORD: ADMIN  # Change to desired password
+      POSTGRES_DB: MYDATABASE          # Change to desired database name
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persist data
+
+volumes:
+  postgres_data:

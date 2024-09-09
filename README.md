@@ -1,60 +1,81 @@
-<div align="center">
-    <img src="./Kuma-logo.jpg" alt="Kuma logo" style="width: 200px;">
-</div>
+# Turborepo starter
 
-# Scaffold a full production ready project with Kuma 🐻
+This is an official starter Turborepo.
 
-Kuma helps you get your project up and running without having the need to spend hour on end settings everything up.
+## Using this example
 
-Take a look at our templates that we call modules, and start your project right away.
+Run the following command:
 
-<p align="center">
-    <img alt="NPM downloads" src="https://img.shields.io/npm/d18m/create-kuma-project">
-    <img src="https://img.shields.io/npm/unpacked-size/create-kuma-project" alt="Bundle Size">
-<img alt="Last Commit" src="https://img.shields.io/github/last-commit/SitaGomes/create-kuma-project"/>
-</p>
-
-<p align="center">
- <a href="#modules">Modules</a> •
- <a href="#camera-demonstration">Demonstration</a> •
- <a href="#author">Credits</a> 
-</p>
-
-## How to start:
-
-Use this code to
-
-```shell
-npx create-kuma-project <projectName>
+```sh
+npx create-turbo@latest
 ```
 
-Use the arrows to select a module
+## What's inside?
 
-```shell
-? Choose the module you want to initialize? (Use arrow keys)
-❯ <ModuleName1>
-❯ <ModuleName2>
-...
+This Turborepo includes the following packages/apps:
+
+### Apps and Packages
+
+- `docs`: a [Next.js](https://nextjs.org/) app
+- `web`: another [Next.js](https://nextjs.org/) app
+- `@kuma/ui`: a stub React component library shared by both `web` and `docs` applications
+- `@kuma/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `@kuma/typescript-config`: `tsconfig.json`s used throughout the monorepo
+
+Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+
+### Utilities
+
+This Turborepo has some additional tools already setup for you:
+
+- [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [ESLint](https://eslint.org/) for code linting
+- [Prettier](https://prettier.io) for code formatting
+
+### Build
+
+To build all apps and packages, run the following command:
+
+```
+cd my-turborepo
+pnpm build
 ```
 
-Then take a sit and let Kuma do its thing 😎
+### Develop
 
-## Modules:
+To develop all apps and packages, run the following command:
 
-### React with Typescript + Tailwind
+```
+cd my-turborepo
+pnpm dev
+```
 
-- [React](https://react.dev/)
-- [Redux Saga](https://redux-saga.js.org/)
-- [React Hook Form](https://react-hook-form.com/)
-- [React Router Dom](https://reactrouter.com/en/main)
-- [React Icons](https://react-icons.github.io/react-icons/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind](https://tailwindcss.com/)
-- [Axios](https://axios-http.com/)
-- [Eslint](https://eslint.org)
-- [Prettier](https://prettier.io/)
-- [Postcss](https://github.com/postcss/postcss)
+### Remote Caching
 
-## Author
+Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
 
-Created with ♥ by Sita Gomes!
+By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+
+```
+cd my-turborepo
+npx turbo login
+```
+
+This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+
+Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+
+```
+npx turbo link
+```
+
+## Useful Links
+
+Learn more about the power of Turborepo:
+
+- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
+- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
+- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
+- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
+- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
+- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
