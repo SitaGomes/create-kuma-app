@@ -4,15 +4,15 @@ import { AuthService } from './auth.service';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { AuthController } from './auth.controller';
-// Supprimez cette ligne, CorsModule n'est pas nécessaire ici
-// import { CorsModule } from '@nestjs/common';
+import { getConfigToken } from '@nestjs/config';
+import { ENV } from 'src/lib/constants/ENV';
 
 @Module({
   imports: [
     PassportModule,
     JwtModule.register({
-      secret: process.env.JWT_SECRET,
-      signOptions: { expiresIn: '1d' },
+      secret: getConfigToken(ENV.JWT_SECRET),
+      signOptions: { expiresIn: '7d' },
     }),
   ],
   providers: [AuthService, JwtStrategy],

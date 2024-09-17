@@ -5,9 +5,9 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "env": ["API_ROUTE", "SECRET_KEY", "NODE_ENV"],
+      "env": ["API_ROUTE", "NODE_ENV", "JWT_SECRET"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "lint": {
       "dependsOn": ["^lint"]

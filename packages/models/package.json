@@ -1,15 +1,16 @@
 {
   "name": "@kuma/models",
   "version": "0.0.0",
-  "description": "",
+  "private": true,
   "exports": "./src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "devDependencies": {
+    "@kuma/eslint-config": "workspace:*",
+    "@kuma/typescript-config": "workspace:*"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "files": [
-    "src/index.ts"
-  ]
+  "license": "ISC"
 }
