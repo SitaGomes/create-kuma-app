@@ -1,9 +1,9 @@
 import { IsString } from 'class-validator';
 import { Dto } from 'src/lib/dto/DtoConstructor';
-import { AuthDto } from 'src/public/user/dtos/request/authDto';
+import { AuthUser } from 'src/lib/models';
 
 export class LoginResDto extends Dto<LoginResDto> {
   @IsString()
   token: string;
-  user: AuthDto;
+  user: AuthUser;
 }

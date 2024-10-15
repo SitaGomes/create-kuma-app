@@ -4,12 +4,12 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
-import { DatabaseService } from 'src/lib/database/database.service';
 import { JwtService } from '@nestjs/jwt';
 import { LoginDto } from './dtos/request/loginDto';
+import { DatabaseService } from '../lib/database/database.service';
+import { AuthUser } from 'src/lib/models';
 import { RegisterDto } from './dtos/request/registerDto';
 import { LoginResDto } from './dtos/response/loginResDto';
-import { AuthDto } from 'src/public/user/dtos/request/authDto';
 
 @Injectable()
 export class AuthService {
@@ -33,13 +33,11 @@ export class AuthService {
       throw new UnauthorizedException();
     }
 
-    return this.returnAuthUser(
-      new AuthDto({
-        email: user.email,
-        name: user.name,
-        id: user.id,
-      }),
-    );
+    return this.returnAuthUser({
+      email: user.email,
+      name: user.name,
+      id: user.id,
+    });
   }
 
   async register(data: RegisterDto) {
@@ -51,13 +49,11 @@ export class AuthService {
       },
     });
 
-    return this.returnAuthUser(
-      new AuthDto({
-        email: user.email,
-        name: user.name,
-        id: user.id,
-      }),
-    );
+    return this.returnAuthUser({
+      email: user.email,
+      name: user.name,
+      id: user.id,
+    });
   }
 
   async validateUser(email: string) {
@@ -79,7 +75,7 @@ export class AuthService {
     return null;
   }
 
-  async returnAuthUser(authUser: AuthDto) {
+  async returnAuthUser(authUser: AuthUser) {
     return new LoginResDto({
       token: this.jwtService.sign({ ...authUser }),
       user: authUser,
