@@ -1,11 +1,5 @@
 'use client';
 
-// import { User } from '@/types';
-
-// type SettingsPageProps = {
-//   user: User;
-// };
-
 export const SettingsPage = () => {
   return (
     <div>

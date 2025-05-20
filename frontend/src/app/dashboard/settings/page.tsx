@@ -12,14 +12,6 @@ export default async function SettingsPageServer() {
     redirect(ROUTES.LOGIN);
   }
 
-  // const user = {
-  //   username: session?.user.username || '',
-  //   email: session?.user.email || '',
-  //   id: session?.user.id || '',
-  //   orgId: session?.user.orgId || '',
-  //   level: session?.user.level || '',
-  // };
-
   return (
     <Layout>
       <SettingsPage />

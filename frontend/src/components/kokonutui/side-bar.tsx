@@ -5,17 +5,7 @@ import { MEMBER_LEVEL, ROUTES } from '@/constants';
 import Link from 'next/link';
 import { useState } from 'react';
 
-import {
-  LuBarcode,
-  LuBook,
-  LuChartArea,
-  LuCreditCard,
-  LuMenu,
-  LuPackage,
-  LuPlus,
-  LuSettings,
-  LuUser,
-} from 'react-icons/lu';
+import { LuChartArea, LuMenu, LuSettings, LuUser } from 'react-icons/lu';
 
 import { SideBarSection } from '../sidebar-section';
 import { usePathname } from 'next/navigation';
@@ -42,39 +32,6 @@ export default function Sidebar() {
       },
     ];
 
-    const productItems = [
-      {
-        children: <>Registrar</>,
-        href: ROUTES.REGISTER,
-        icon: LuPlus,
-        handleNavigation,
-      },
-      {
-        children: <>Pesquisar</>,
-        href: ROUTES.SEARCH,
-        icon: LuBarcode,
-        handleNavigation,
-      },
-      {
-        children: <>Lista</>,
-        href: ROUTES.LIST_PRODUCTS,
-        icon: LuPackage,
-        handleNavigation,
-      },
-      {
-        children: <>Vender</>,
-        href: ROUTES.SELL,
-        icon: LuCreditCard,
-        handleNavigation,
-      },
-      {
-        children: <>Historico</>,
-        href: ROUTES.HISTORY,
-        icon: LuBook,
-        handleNavigation,
-      },
-    ];
-
     const orgItems = [
       {
         children: <>Membros</>,
@@ -88,30 +45,7 @@ export default function Sidebar() {
       case MEMBER_LEVEL.ADMIN:
         return [
           { title: 'Geral', items: overviewItems },
-          { title: 'Produtos', items: productItems },
           { title: 'Organização', items: orgItems },
-        ];
-      case MEMBER_LEVEL.REGISTER:
-        return [{ title: 'Produtos', items: productItems }];
-      case MEMBER_LEVEL.SELLER:
-        return [
-          {
-            title: 'Produtos',
-            items: [
-              {
-                children: <>Vender</>,
-                href: ROUTES.SELL,
-                icon: LuCreditCard,
-                handleNavigation,
-              },
-              {
-                children: <>Historico</>,
-                href: ROUTES.HISTORY,
-                icon: LuBook,
-                handleNavigation,
-              },
-            ],
-          },
         ];
       default:
         return [];

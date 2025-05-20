@@ -2,9 +2,7 @@
 
 import { Button } from '@/components';
 import { MEMBER_LEVEL, ROUTES } from '@/constants';
-import { mutateAddMember } from '@/hooks';
 import { notify } from '@/lib';
-import { AddMember } from '@/types';
 import { getMemberLevelName } from '@/utils';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
@@ -49,7 +47,7 @@ export const AddMembersPage = ({ token, orgId }: MemberFormProps) => {
   const onSubmit = handleSubmit(async (data: MemberForm) => {
     setLoading(true);
     try {
-      await mutateAddMember(token, { ...data, orgId } as AddMember);
+      console.log(token, { ...data, orgId });
       notify({ message: 'Membro adicionado com sucesso!', type: 'success' });
       router.push(ROUTES.MEMBERS);
     } catch (error) {

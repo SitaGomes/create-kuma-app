@@ -4,11 +4,18 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { FaStar, FaDollarSign, FaBox, FaBarcode } from 'react-icons/fa';
 
-import { Report } from '@/types';
 import { formatCurrency, getReportDate } from '@/utils';
 import { ROUTES } from '@/constants';
 
 import { ProductSalesChart } from './charts/product-sales';
+
+type Report = {
+  id: string;
+  productOfMonth: string;
+  totalAmount: number;
+  totalInStock: number;
+  totalScanned: number;
+};
 
 type HomePageProps = {
   report: Report[];
@@ -105,7 +112,7 @@ export const HomePage = ({ report }: HomePageProps) => {
             </Link>
           </div>
 
-          <ProductSalesChart data={selectedReport.productSales} />
+          <ProductSalesChart data={[]} />
         </div>
       ) : (
         <div className="flex items-center justify-center h-96">

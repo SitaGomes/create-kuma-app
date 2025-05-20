@@ -1,5 +1,5 @@
 import { getServerSession } from 'next-auth';
-import { authOptions, fetchReportsAsync } from '@/lib';
+import { authOptions } from '@/lib';
 import { Layout } from '@/components';
 import { MEMBER_LEVEL, ROUTES } from '@/constants';
 import { HomePage } from './components/home-page';
@@ -11,11 +11,9 @@ export default async function HomePageServer() {
     redirect(ROUTES.LIST_PRODUCTS);
   }
 
-  const report = await fetchReportsAsync(session?.user?.accessToken || '');
-
   return (
     <Layout>
-      <HomePage report={report} />
+      <HomePage report={[]} />
     </Layout>
   );
 }

@@ -2,9 +2,7 @@
 
 import { Button } from '@/components';
 import { ROUTES } from '@/constants';
-import { mutateCreateProduct, mutateUpdateProduct } from '@/hooks';
 import { notify } from '@/lib';
-import { Product } from '@/types';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -24,6 +22,19 @@ const schema = zod.object({
 });
 
 export type ProductForm = zod.infer<typeof schema>;
+
+type Product = {
+  id: string;
+  name: string;
+  barcode: string;
+  price: number;
+  quantity: number;
+  minimumQuantity: number;
+  description: string;
+  imageUrl: string;
+  createdDate: Date;
+  updatedDate: Date;
+};
 
 type ProductFormProps = {
   token: string;
@@ -55,7 +66,7 @@ export const ProductForm = ({ token, product }: ProductFormProps) => {
     setLoading(true);
     if (product?.id) {
       try {
-        await mutateUpdateProduct(token, {
+        console.log(token, {
           ...data,
           id: product.id,
           createdDate: product.createdDate,
@@ -75,7 +86,7 @@ export const ProductForm = ({ token, product }: ProductFormProps) => {
       return;
     } else {
       try {
-        await mutateCreateProduct(token, {
+        console.log(token, {
           ...data,
           id: '',
           imageUrl: '',

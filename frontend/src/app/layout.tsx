@@ -18,7 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Readable',
+  title: 'Create Kuma Project',
   description: '',
 };
 

@@ -4,7 +4,6 @@ import { getServerSession } from 'next-auth';
 import { MEMBER_LEVEL, ROUTES } from '@/constants';
 import { redirect } from 'next/navigation';
 import { MemberPage } from './components/member-page';
-import { fetchAllMemberAsync } from '@/lib/services/memberService';
 
 export default async function MembersPageServer() {
   const session = await getServerSession(authOptions);
@@ -21,7 +20,6 @@ export default async function MembersPageServer() {
     redirect(ROUTES.HISTORY);
   }
 
-  const members = await fetchAllMemberAsync(session.user?.accessToken || '');
   const authUser = {
     id: session.user?.id || '',
     level: session.user?.level || '',
@@ -30,7 +28,7 @@ export default async function MembersPageServer() {
   return (
     <Layout>
       <MemberPage
-        members={members}
+        members={[]}
         token={session.user?.accessToken || ''}
         authUser={authUser}
       />

@@ -10,16 +10,15 @@ import {
   DialogTrigger,
 } from '@/components';
 import { MEMBER_LEVEL, ROUTES } from '@/constants';
-import { mutateDeleteMember } from '@/hooks';
 import { notify } from '@/lib';
-import { Member } from '@/types';
 import { getMemberLevelName } from '@/utils';
 import Link from 'next/link';
 import { useState } from 'react';
 import { LuPlus, LuTrash } from 'react-icons/lu';
+import { User } from '@/types';
 
 type MemberPageProps = {
-  members: Member[];
+  members: User[];
   token: string;
   authUser: { id: string; level: string };
 };
@@ -33,7 +32,7 @@ export const MemberPage = ({ members, token, authUser }: MemberPageProps) => {
   const handleDeleteMember = async (id: string) => {
     setIsLoading(true);
     try {
-      await mutateDeleteMember(token, id);
+      console.log(token, id);
       notify({ message: 'Membro deletado com sucesso', type: 'success' });
     } catch (error) {
       console.error('Error deleting member:', error);
