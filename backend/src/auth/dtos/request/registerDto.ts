@@ -1,12 +1,29 @@
-import { IsAlphanumeric, IsEmail, IsString } from 'class-validator';
+import {
+  IsAlphanumeric,
+  IsEmail,
+  IsNotEmpty,
+  IsString,
+  MinLength,
+} from 'class-validator';
 
 export class RegisterDto {
   @IsEmail()
+  @IsNotEmpty()
   email: string;
 
   @IsAlphanumeric()
+  @MinLength(6)
+  @IsNotEmpty()
   password: string;
 
   @IsString()
-  name: string;
+  @IsNotEmpty()
+  username: string;
+
+  @IsNotEmpty()
+  level: string;
+
+  @IsNotEmpty()
+  @IsString()
+  orgId: string;
 }

@@ -1,0 +1,5 @@
+export const MEMBER_LEVEL = {
+  ADMIN: 'ADMIN',
+  SELLER: 'SELLER',
+  REGISTER: 'REGISTER',
+};

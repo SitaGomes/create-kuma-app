@@ -1,0 +1,4 @@
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+const REVALIDATE_TIME = 3600;
+
+export { BASE_URL, REVALIDATE_TIME };

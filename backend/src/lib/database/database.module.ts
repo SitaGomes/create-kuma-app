@@ -1,9 +1,11 @@
 import { Global, Module } from '@nestjs/common';
-import { DatabaseService } from './database.service';
+import { DatabaseClient } from './database.service';
+import { FirestoreModule } from './singleton/firestore.module';
 
 @Global()
 @Module({
-  providers: [DatabaseService],
-  exports: [DatabaseService],
+  imports: [FirestoreModule],
+  providers: [DatabaseClient],
+  exports: [DatabaseClient],
 })
 export class DatabaseModule {}

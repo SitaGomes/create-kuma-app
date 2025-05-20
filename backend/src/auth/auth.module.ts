@@ -5,7 +5,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { AuthController } from './auth.controller';
 import { getConfigToken } from '@nestjs/config';
-import { ENV } from 'src/lib/constants/ENV';
+import { ENV } from 'src/data/constants/ENV';
 
 @Module({
   imports: [
