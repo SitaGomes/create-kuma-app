@@ -95,12 +95,22 @@ frontend/
 
 ## Getting Started
 
-After creating your project with `npx create-kuma-project <projectName>`, you'll have this template structure ready to use.
+After creating your project with:
+
+```shell
+# Method 1: Specify project name directly
+npx create-kuma-app <projectName>
+
+# Method 2: Interactive prompt (will use current directory name as default)
+npx create-kuma-app
+```
+
+You'll have this template structure ready to use.
 
 1. Navigate to your project directory:
 
    ```bash
-   cd <projectName>
+   cd <appName>
    ```
 
 2. Install dependencies for both backend and frontend:
